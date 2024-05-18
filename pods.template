@@ -1,0 +1,13 @@
+Value Pass ([a-zA-z]+\s[a-zA-Z]+\s[a-zA-Z]+\s[a-zA-Z]+)
+Value Fail (^\S+[ ]{2,}\S+\s+\S+\s+\S+\s+\S+)
+
+
+Start
+  ^${Pass} -> Record
+  ^${Fail} -> Record
+  
+  
+  
+
+
+

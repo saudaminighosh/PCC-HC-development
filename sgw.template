@@ -1,0 +1,6 @@
+Value NoOfUE ((sgw-nbr-of-ues: )[0-9]+)
+Value NoOfConnectedUE ((sgw-nbr-of-connected-ues: )[0-9]+)
+
+Start
+  ^\s+${NoOfUE}
+  ^\s+${NoOfConnectedUE} -> Record

@@ -1,0 +1,6 @@
+Value ALARM (\S+$)
+Value SEVERITY (\S+)
+
+Start
+  ^${ALARM}
+  ^\s+(active-severity)\s+${SEVERITY} -> Record

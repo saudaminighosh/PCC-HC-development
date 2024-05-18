@@ -1,0 +1,8 @@
+Value BOARDNAME ((board-name: )\S+)
+Value PODNAME ((pod-name: )\S+)
+Value ACTIVECONNECTIONS ((active-connections: )\S+)
+
+Start
+  ^\s+${BOARDNAME}
+  ^\s+${PODNAME}
+  ^\s+${ACTIVECONNECTIONS} -> Record

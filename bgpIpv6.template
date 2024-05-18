@@ -1,0 +1,8 @@
+Value InstanceID ((instance-id )\S+)
+Value RouteNW ((network )\S+)
+Value Hop ((nexthop )\S+)
+
+Start
+  ^\s+${InstanceID}
+  ^\s+${RouteNW}
+  ^\s+${Hop} -> Record

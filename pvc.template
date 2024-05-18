@@ -1,0 +1,6 @@
+Value Pass ($)
+Value Fail (\S+)
+
+Start
+  ^\S+\s*\S*${Pass} -> Record
+  ^${Fail}[ ]{2,} -> Record

@@ -1,0 +1,4 @@
+Value COUNT ((Count: )[0-9]+\s\S+)
+
+Start
+  ^${COUNT} -> Record
