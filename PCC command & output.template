@@ -1,0 +1,848 @@
+--------------------------------------------------------Common-----------------------------------------------
+
+Check Containers status - kubectl -n <namespace> get pods | grep -v Completed | awk -F"[ /]+" 'BEGIN{found=0} !/NAME/ {if ($2!=$3) { found=1; print $0}} END { if (!found) print "All containers are up"}'
+Check Persistent Volume Claim Status - 
+
+---------------------------------------------------------AMF---------------------------------------------------------------
+
+
+
+adm@pcc#show alarm
+NrfRegisterFailure
+         active-severity        Critical
+         service-name           eric-pc-sm-controller
+         event-type             CommunicationsAlarm
+         expires                83
+         source                 /epg:epg/pgw/nnrf-nfm/nf-service-instance[name='nnrf-nfm-ins1']
+         specific-problem       NRF Registration Failure
+         probable-cause         22
+         major-type             193
+         minor-type             11141378
+         last-event-time        2024-05-17T15:35:03.249122 CEST
+         additional-text        NFRegister towards NRF nnrf-nfm-ins1 failed. Cause: ConnectionDown.
+
+pmSupThresholdCrossedWar
+         active-severity        Warning
+         service-name           eric-pc-mm-controller
+         event-type             QualityOfServiceAlarm
+         expires                57
+         source                 /mm/eric-pc-mm-forwarder-96ff6b879-w5lwq/85
+         specific-problem       PM Sup Threshold Crossed War
+         probable-cause         100549
+         major-type             193
+         minor-type             4239786058
+         last-event-time        2024-05-17T00:16:33.747098 CEST
+         additional-text        The value of measurement type icmpOutDestUnreachs has reached its threshold.
+
+pmSupThresholdCrossedWar
+         active-severity        Warning
+         service-name           eric-pc-mm-controller
+         event-type             QualityOfServiceAlarm
+         expires                57
+         source                 /mm/eric-pc-mm-forwarder-96ff6b879-xs6bm/84
+         specific-problem       PM Sup Threshold Crossed War
+         probable-cause         100549
+         major-type             193
+         minor-type             4239786058
+         last-event-time        2024-05-17T00:16:33.737570 CEST
+         additional-text        The value of measurement type icmpOutDestUnreachs has reached its threshold.
+
+pmSupThresholdCrossedWar
+         active-severity        Warning
+         service-name           eric-pc-mm-controller
+         event-type             QualityOfServiceAlarm
+         expires                57
+         source                 /mm/eric-pc-mm-forwarder-96ff6b879-w5lwq/83
+         specific-problem       PM Sup Threshold Crossed War
+         probable-cause         100549
+         major-type             193
+         minor-type             4239786058
+         last-event-time        2024-05-17T00:16:33.727476 CEST
+         additional-text        The value of measurement type icmpInDestUnreachs has reached its threshold.
+
+pmSupThresholdCrossedWar
+         active-severity        Warning
+         service-name           eric-pc-mm-controller
+         event-type             QualityOfServiceAlarm
+         expires                57
+         source                 /mm/eric-pc-mm-forwarder-96ff6b879-xs6bm/82
+         specific-problem       PM Sup Threshold Crossed War
+         probable-cause         100549
+         major-type             193
+         minor-type             4239786058
+         last-event-time        2024-05-17T00:16:33.673167 CEST
+         additional-text        The value of measurement type icmpInDestUnreachs has reached its threshold.
+
+diameterConnectionDown
+         active-severity        Major
+         service-name           eric-pc-mm-controller
+         event-type             CommunicationsAlarm
+         expires                57
+         source                 /mm/diameterPeer/81
+         specific-problem       Diameter Connection Down
+         probable-cause         18
+         major-type             193
+         minor-type             4239786170
+         last-event-time        2024-05-17T00:16:07.173352 CEST
+         additional-text        Diameter Connection to peer 11 with IP address 12.10.7.88 is down due to problem on SCTP level.  Cause: No cause code available Origin is Local user.
+
+bfdNeighborDown
+         active-severity        Minor
+         service-name           eric-pc-mm-controller
+         event-type             CommunicationsAlarm
+         expires                57
+         source                 /mm/eric-pc-mm-forwarder-96ff6b879-w5lwq/80
+         specific-problem       BFD Neighbor Down
+         probable-cause         25
+         major-type             193
+         minor-type             4239786094
+         last-event-time        2024-05-17T00:15:58.280375 CEST
+         additional-text        BFD session to neighbor 172.100.7.254 on the SIG_SCTP_2 network is down.
+
+bfdNeighborDown
+         active-severity        Minor
+         service-name           eric-pc-mm-controller
+         event-type             CommunicationsAlarm
+         expires                57
+         source                 /mm/eric-pc-mm-forwarder-96ff6b879-w5lwq/79
+         specific-problem       BFD Neighbor Down
+         probable-cause         25
+         major-type             193
+         minor-type             4239786094
+         last-event-time        2024-05-17T00:15:58.263867 CEST
+         additional-text        BFD session to neighbor 172.100.6.254 on the SIG_SCTP_1 network is down.
+
+bfdNeighborDown
+         active-severity        Minor
+         service-name           eric-pc-mm-controller
+         event-type             CommunicationsAlarm
+         expires                57
+         source                 /mm/eric-pc-mm-forwarder-96ff6b879-w5lwq/78
+         specific-problem       BFD Neighbor Down
+         probable-cause         25
+         major-type             193
+         minor-type             4239786094
+         last-event-time        2024-05-17T00:15:58.251736 CEST
+         additional-text        BFD session to neighbor 172.100.5.254 on the PRAN_SCTP_2 network is down.
+
+bfdNeighborDown
+         active-severity        Minor
+         service-name           eric-pc-mm-controller
+         event-type             CommunicationsAlarm
+         expires                57
+         source                 /mm/eric-pc-mm-forwarder-96ff6b879-w5lwq/77
+         specific-problem       BFD Neighbor Down
+         probable-cause         25
+         major-type             193
+         minor-type             4239786094
+         last-event-time        2024-05-17T00:15:58.239086 CEST
+         additional-text        BFD session to neighbor 172.100.4.254 on the PRAN_SCTP_1 network is down.
+
+bfdNeighborDown
+         active-severity        Minor
+         service-name           eric-pc-mm-controller
+         event-type             CommunicationsAlarm
+         expires                57
+         source                 /mm/eric-pc-mm-forwarder-96ff6b879-w5lwq/75
+         specific-problem       BFD Neighbor Down
+         probable-cause         25
+         major-type             193
+         minor-type             4239786094
+         last-event-time        2024-05-17T00:15:58.171732 CEST
+         additional-text        BFD session to neighbor 172.100.8.254 on the MEDIA_SCTP_1 network is down.
+
+bfdNeighborDown
+         active-severity        Minor
+         service-name           eric-pc-mm-controller
+         event-type             CommunicationsAlarm
+         expires                57
+         source                 /mm/eric-pc-mm-forwarder-96ff6b879-xs6bm/74
+         specific-problem       BFD Neighbor Down
+         probable-cause         25
+         major-type             193
+         minor-type             4239786094
+         last-event-time        2024-05-17T00:15:57.324025 CEST
+         additional-text        BFD session to neighbor 172.100.7.254 on the SIG_SCTP_2 network is down.
+
+bfdNeighborDown
+         active-severity        Minor
+         service-name           eric-pc-mm-controller
+         event-type             CommunicationsAlarm
+         expires                57
+         source                 /mm/eric-pc-mm-forwarder-96ff6b879-xs6bm/73
+         specific-problem       BFD Neighbor Down
+         probable-cause         25
+         major-type             193
+         minor-type             4239786094
+         last-event-time        2024-05-17T00:15:57.312300 CEST
+         additional-text        BFD session to neighbor 172.100.6.254 on the SIG_SCTP_1 network is down.
+
+bfdNeighborDown
+         active-severity        Minor
+         service-name           eric-pc-mm-controller
+         event-type             CommunicationsAlarm
+         expires                57
+         source                 /mm/eric-pc-mm-forwarder-96ff6b879-xs6bm/72
+         specific-problem       BFD Neighbor Down
+         probable-cause         25
+         major-type             193
+         minor-type             4239786094
+         last-event-time        2024-05-17T00:15:57.254848 CEST
+         additional-text        BFD session to neighbor 172.100.5.254 on the PRAN_SCTP_2 network is down.
+
+bfdNeighborDown
+         active-severity        Minor
+         service-name           eric-pc-mm-controller
+         event-type             CommunicationsAlarm
+         expires                57
+         source                 /mm/eric-pc-mm-forwarder-96ff6b879-xs6bm/71
+         specific-problem       BFD Neighbor Down
+         probable-cause         25
+         major-type             193
+         minor-type             4239786094
+         last-event-time        2024-05-17T00:15:57.245206 CEST
+         additional-text        BFD session to neighbor 172.100.4.254 on the PRAN_SCTP_1 network is down.
+
+bfdNeighborDown
+         active-severity        Minor
+         service-name           eric-pc-mm-controller
+         event-type             CommunicationsAlarm
+         expires                57
+         source                 /mm/eric-pc-mm-forwarder-96ff6b879-xs6bm/69
+         specific-problem       BFD Neighbor Down
+         probable-cause         25
+         major-type             193
+         minor-type             4239786094
+         last-event-time        2024-05-17T00:15:57.172895 CEST
+         additional-text        BFD session to neighbor 172.100.8.254 on the MEDIA_SCTP_1 network is down.
+
+ConnectionWithAllNrfsLost
+         active-severity        Critical
+         service-name           eric-pc-sm-controller
+         event-type             CommunicationsAlarm
+         expires                83
+         source                 /epg:epg/pgw/svc[name='nnrf-nfm']
+         specific-problem       Connection With All NRFs Lost
+         probable-cause         22
+         major-type             193
+         minor-type             11141376
+         last-event-time        2024-05-15T08:24:16.223425 CEST
+         additional-text        Connections of nnrf-nfm to All NRFs are lost
+
+AllHttpConnectionsToNfServerFailed
+         active-severity        Critical
+         service-name           eric-pc-sm-controller
+         event-type             CommunicationsAlarm
+         expires                83
+         source                 /epg:epg/smf/remote-nf-inst[name='nnrf-nfm']/remote-svc-inst[name='nnrf-nfm-ins1']
+         specific-problem       All Http Connections to NF and service instance lost
+         probable-cause         22
+         major-type             193
+         minor-type             2300313769
+         last-event-time        2024-05-15T08:24:16.223412 CEST
+         additional-text        All HTTP connections failure has occurred remoteNFinstance=nnrf-nfm
+
+admAutonomousModeActivated
+         active-severity        Major
+         service-name           eric-pc-mm-controller
+         event-type             QualityOfServiceAlarm
+         expires                57
+         source                 /mm/lm_nels/34
+         specific-problem       Adm Autonomous Mode Activated
+         probable-cause         100505
+         major-type             193
+         minor-type             4239786263
+         last-event-time        2024-05-13T13:31:07.615667 CEST
+         additional-text        Autonomous Mode has been activated. No connection to NeLS.
+
+RoutingBGPNeighborDown
+         active-severity        Major
+         service-name           eric-pc-routing-engine
+         event-type             ProcessingErrorAlarm
+         expires                129
+         source                 eric-pc-routing-engine[id=eric-pc-routing-engine-6c94b9455-zxv67]/system/software/processes/process[name=bgp]
+         specific-problem       Routing BGP Neighbor Down
+         probable-cause         305
+         major-type             193
+         minor-type             8783362
+         last-event-time        2024-05-13T13:31:03.377145 CEST
+         additional-text        BGP neighbor(s) down: [media] 172.100.9.254, [signaling] 172.100.10.254, 2 in total
+
+RoutingBGPNeighborDown
+         active-severity        Major
+         service-name           eric-pc-routing-engine
+         event-type             ProcessingErrorAlarm
+         expires                118
+         source                 eric-pc-routing-engine[id=eric-pc-routing-engine-6c94b9455-z46nf]/system/software/processes/process[name=bgp]
+         specific-problem       Routing BGP Neighbor Down
+         probable-cause         305
+         major-type             193
+         minor-type             8783362
+         last-event-time        2024-05-10T14:05:46.737293 CEST
+         additional-text        BGP neighbor(s) down: [media] 172.100.9.254, [signaling] 172.100.10.254, 2 in total
+
+LicenseManagerAutonomousModeActivated
+         active-severity        Major
+         service-name           eric-lm-combined-server
+         event-type             QualityOfServiceAlarm
+         expires                3300
+         source                 /x:network-license-server
+         specific-problem       License Manager Autonomous Mode Activated
+         probable-cause         306
+         major-type             193
+         minor-type             17301506
+         last-event-time        2024-05-10T11:21:07.224081 CEST
+         additional-text        Lost connection with Network License Server
+adm@pcc#
+
+-------------------------------------------------------------SMF-----------------------------------------------------------------
+
+
+adm@pcc#show running-config epg pgw node
+epg pgw node pcc01-smf
+
+
+
+adm@pcc#epg pgw sbi smf-services status
+result
+httpserverd:
+
+    smf-services:
+
+        status:
+            board-name: gc-0/128/1
+            pod-name: eric-pc-sm-nsmf-forwarder-7fc4b944f9-tw2tz
+            service-type: ipv4
+            active-connections: 0
+            olp-status: OLP not configured for this SBI
+            disconnection-by-ping-rsp-timeout-AMF: 0
+            disconnection-by-ping-rsp-protocol-error-AMF: 0
+
+            http-messages:
+                req-recv: 0
+                req-timeout: 0
+                req-exceed-max-transactions: 0
+                pending-transactions: 0
+                rsp-sent-accept: 0
+                rsp-sent-reject: 0
+                ipc-duration: [id=libhttpsupport.serverId:1.ipcDuration, mean=0us, min=-1us, max=0us, count=0, ongoing=0, cancellations=0]
+
+httpserverd:
+
+    smf-services:
+
+        status:
+            board-name: gc-0/125/1
+            pod-name: eric-pc-sm-nsmf-forwarder-7fc4b944f9-8fzx8
+            service-type: ipv4
+            active-connections: 0
+            olp-status: OLP not configured for this SBI
+            disconnection-by-ping-rsp-timeout-AMF: 0
+            disconnection-by-ping-rsp-protocol-error-AMF: 0
+
+            http-messages:
+                req-recv: 0
+                req-timeout: 0
+                req-exceed-max-transactions: 0
+                pending-transactions: 0
+                rsp-sent-accept: 0
+                rsp-sent-reject: 0
+                ipc-duration: [id=libhttpsupport.serverId:1.ipcDuration, mean=0us, min=-1us, max=0us, count=0, ongoing=0, cancellations=0]
+adm@pcc#
+
+
+
+adm@pcc#epg pgw sbi smf-services status | include board-name: | count
+Count: 2 lines
+
+
+
+adm@pcc#epg sgw statistics
+result
+sgw-statistics:
+
+    sgw-number-of-ues:
+        sgw-nbr-of-ues: 0
+        sgw-nbr-of-connected-ues: 0
+        nbr-of-lte-m-ues: 0
+        nbr-of-suspended-ues: 0
+        nbr-of-emc-unauth-ues: 0
+        nbr-of-ues-pending-restoration: 0
+        ue-restoration-completed: 0
+        ue-restoration-attempted: 0
+        nbr-of-nb-iot-ues: 0
+        nbr-of-s11-u-lte-m-ues: 0
+        nbr-of-s11-u-ues: 0
+        nbr-of-s11-u-nb-iot-ues: 0
+        sgw-nbr-of-non-ip-ues: 0
+
+    sgw-number-of-sessions:
+        sgw-nbr-of-pdn-connections: 0
+        sgw-nbr-of-lapi-pdn-connections: 0
+        sgw-nbr-of-lte-m-bearers: 0
+        sgw-nbr-of-lte-m-pdn-connections: 0
+        sgw-nbr-of-3gdt-pdn-connections: 0
+        sgw-nbr-of-pgw-pause-chrg-enabled-pdn-connections: 0
+        sgw-nbr-of-pgw-paused-chrg-pdn-connections: 0
+        sgw-nbr-of-nb-iot-pdn-connections: 0
+        sgw-nbr-of-s11-u-pdn-connections: 0
+        sgw-nbr-of-s11-u-nb-iot-pdn-connections: 0
+        sgw-nbr-of-non-ip-pdn-connections: 0
+        sgw-nbr-of-bearers: 0
+        sgw-nbr-of-active-bearers: 0
+        sgw-nbr-of-idle-bearers: 0
+        sgw-nbr-of-nb-iot-bearers: 0
+        sgw-nbr-of-s11-u-bearers: 0
+        sgw-nbr-of-s11-u-lte-m-bearers: 0
+        sgw-nbr-of-s11-u-lte-m-pdn-connections: 0
+        sgw-nbr-of-s11-u-nb-iot-bearers: 0
+        sgw-nbr-of-pdn-connections-in-dl-buffer-duration: 0
+
+    sgw-gtp-tunnel-mgmt-s4s11:
+        sm-create-session-req-rcvd: 0
+        sm-create-session-resp-acc-sent: 0
+        sm-create-session-resp-rej-sent: 0
+        sm-modify-bearer-req-rcvd: 0
+        sm-modify-bearer-resp-acc-sent: 0
+        sm-modify-bearer-resp-rej-sent: 0
+        sm-modify-access-bearers-req-rcvd: 0
+        sm-modify-access-bearers-resp-acc-sent: 0
+        sm-modify-access-bearers-resp-rej-sent: 0
+        sm-delete-session-req-rcvd: 0
+        sm-delete-session-resp-acc-sent: 0
+        sm-delete-session-resp-rej-sent: 0
+        sm-delete-bearer-req-sent: 0
+        sm-delete-bearer-resp-acc-rcvd: 0
+        sm-delete-bearer-resp-rej-rcvd: 0
+        sm-dl-data-notif-sent: 0
+        sm-dl-data-notif-ack-acc-rcvd: 0
+        sm-dl-data-notif-ack-rej-rcvd: 0
+        sm-dl-data-notif-failure-ind-rcvd: 0
+        sm-dl-data-notif-smart-paging-sent: 0
+        sm-dl-data-notif-dropped-rate-control: 0
+        sm-rel-access-bearers-req-rcvd: 0
+        sm-rel-access-bearers-resp-acc-sent: 0
+        sm-rel-access-bearers-resp-rej-sent: 0
+        sm-update-bearer-req-sent: 0
+        sm-update-bearer-resp-acc-rcvd: 0
+        sm-update-bearer-resp-rej-rcvd: 0
+        sm-create-ind-data-fwd-tl-req-rcvd: 0
+        sm-create-ind-data-fwd-tl-resp-acc-sent: 0
+        sm-create-ind-data-fwd-tl-resp-rej-sent: 0
+        sm-create-bearer-req-sent: 0
+        sm-create-bearer-resp-acc-rcvd: 0
+        sm-create-bearer-resp-rej-rcvd: 0
+        sm-delete-bearer-failure-ind-sent: 0
+        sm-delete-bearer-cmd-rcvd: 0
+        sm-delete-ind-data-fwd-tl-req-rcvd: 0
+        sm-delete-ind-data-fwd-tl-resp-acc-sent: 0
+        sm-delete-ind-data-fwd-tl-resp-rej-sent: 0
+        sm-modify-bearer-cmd-rcvd: 0
+        sm-bearer-resource-cmd-rcvd: 0
+        sm-bearer-resource-failure-ind-sent: 0
+        sm-modify-bearer-failure-ind-sent: 0
+        sm-suspend-notif-rcvd: 0
+        sm-resume-notif-rcvd: 0
+        sm-dl-data-notification-ack-imsi-acc-received: 0
+        sm-dl-data-notification-ack-imsi-rej-received: 0
+        sm-dl-data-notification-failure-ind-imsi-received: 0
+        sm-dl-data-notification-imsi-sent: 0
+        sm-dl-data-notif-intermme-sent: 0
+        sm-dl-data-notif-intermme-ack-acc-rcvd: 0
+        sm-dl-data-notif-intermme-ack-rej-rcvd: 0
+        sm-pgw-restart-notif-sent: 0
+        sm-pgw-restart-notif-ack-acc-rcvd: 0
+        sm-pgw-restart-notif-ack-rej-rcvd: 0
+        sm-dl-data-notif-ack-dl-buf-duration-acc-rcvd: 0
+        sm-dl-data-notif-ack-imsi-dl-buf-duration-acc-rcvd: 0
+        sm-change-notification-req-rcvd: 0
+        sm-change-notification-resp-acc-sent: 0
+        sm-change-notification-resp-rej-sent: 0
+
+    sgw-gtp-tunnel-mgmt-s5s8:
+        sm-create-session-req-sent: 0
+        sm-create-session-resp-acc-rcvd: 0
+        sm-create-session-resp-rej-rcvd: 0
+        sm-modify-bearer-req-sent: 0
+        sm-modify-bearer-resp-acc-rcvd: 0
+        sm-modify-bearer-resp-rej-rcvd: 0
+        sm-delete-session-req-sent: 0
+        sm-delete-session-resp-acc-rcvd: 0
+        sm-delete-session-resp-rej-rcvd: 0
+        sm-delete-bearer-req-rcvd: 0
+        sm-delete-bearer-resp-acc-sent: 0
+        sm-delete-bearer-resp-rej-sent: 0
+        sm-update-bearer-req-rcvd: 0
+        sm-update-bearer-resp-acc-sent: 0
+        sm-update-bearer-resp-rej-sent: 0
+        sm-create-bearer-req-rcvd: 0
+        sm-create-bearer-resp-acc-sent: 0
+        sm-create-bearer-resp-rej-sent: 0
+        sm-modify-bearer-cmd-sent: 0
+        sm-modify-bearer-failure-ind-rcvd: 0
+        sm-delete-bearer-cmd-sent: 0
+        sm-delete-bearer-failure-ind-rcvd: 0
+        sm-bearer-resource-cmd-sent: 0
+        sm-bearer-resource-failure-ind-rcvd: 0
+        sm-suspend-notif-sent: 0
+        sm-resume-notif-sent: 0
+        sm-enable-pgw-pause-chrg-req-sent: 0
+        sm-enable-pgw-pause-chrg-acc-rcvd: 0
+        sm-enable-pgw-pause-chrg-rej-rcvd: 0
+        sm-start-pgw-pause-chrg-req-sent: 0
+        sm-start-pgw-pause-chrg-acc-rcvd: 0
+        sm-start-pgw-pause-chrg-rej-rcvd: 0
+        sm-stop-pgw-pause-chrg-req-sent: 0
+        sm-stop-pgw-pause-chrg-acc-rcvd: 0
+        sm-stop-pgw-pause-chrg-rej-rcvd: 0
+        sm-change-notification-req-sent: 0
+        sm-change-notification-resp-acc-rcvd: 0
+        sm-change-notification-resp-rej-rcvd: 0
+
+    sgw-gtp-tunnel-mgmt-s5:
+        sm-create-session-req-sent: 0
+        sm-create-session-resp-acc-rcvd: 0
+        sm-create-session-resp-rej-rcvd: 0
+        sm-modify-bearer-req-sent: 0
+        sm-modify-bearer-resp-acc-rcvd: 0
+        sm-modify-bearer-resp-rej-rcvd: 0
+        sm-delete-session-req-sent: 0
+        sm-delete-session-resp-acc-rcvd: 0
+        sm-delete-session-resp-rej-rcvd: 0
+        sm-delete-bearer-req-rcvd: 0
+        sm-delete-bearer-resp-acc-sent: 0
+        sm-delete-bearer-resp-rej-sent: 0
+        sm-update-bearer-req-rcvd: 0
+        sm-update-bearer-resp-acc-sent: 0
+        sm-update-bearer-resp-rej-sent: 0
+        sm-create-bearer-req-rcvd: 0
+        sm-create-bearer-resp-acc-sent: 0
+        sm-create-bearer-resp-rej-sent: 0
+        sm-modify-bearer-cmd-sent: 0
+        sm-modify-bearer-failure-ind-rcvd: 0
+        sm-delete-bearer-cmd-sent: 0
+        sm-delete-bearer-failure-ind-rcvd: 0
+        sm-bearer-resource-cmd-sent: 0
+        sm-bearer-resource-failure-ind-rcvd: 0
+        sm-suspend-notif-sent: 0
+        sm-resume-notif-sent: 0
+        sm-enable-pgw-pause-chrg-req-sent: 0
+        sm-enable-pgw-pause-chrg-acc-rcvd: 0
+        sm-enable-pgw-pause-chrg-rej-rcvd: 0
+        sm-start-pgw-pause-chrg-req-sent: 0
+        sm-start-pgw-pause-chrg-acc-rcvd: 0
+        sm-start-pgw-pause-chrg-rej-rcvd: 0
+        sm-stop-pgw-pause-chrg-req-sent: 0
+        sm-stop-pgw-pause-chrg-acc-rcvd: 0
+        sm-stop-pgw-pause-chrg-rej-rcvd: 0
+        sm-change-notification-req-sent: 0
+        sm-change-notification-resp-acc-rcvd: 0
+        sm-change-notification-resp-rej-rcvd: 0
+
+    sgw-gtp-tunnel-mgmt-s8:
+        sm-create-session-req-sent: 0
+        sm-create-session-resp-acc-rcvd: 0
+        sm-create-session-resp-rej-rcvd: 0
+        sm-modify-bearer-req-sent: 0
+        sm-modify-bearer-resp-acc-rcvd: 0
+        sm-modify-bearer-resp-rej-rcvd: 0
+        sm-delete-session-req-sent: 0
+        sm-delete-session-resp-acc-rcvd: 0
+        sm-delete-session-resp-rej-rcvd: 0
+        sm-delete-bearer-req-rcvd: 0
+        sm-delete-bearer-resp-acc-sent: 0
+        sm-delete-bearer-resp-rej-sent: 0
+        sm-update-bearer-req-rcvd: 0
+        sm-update-bearer-resp-acc-sent: 0
+        sm-update-bearer-resp-rej-sent: 0
+        sm-create-bearer-req-rcvd: 0
+        sm-create-bearer-resp-acc-sent: 0
+        sm-create-bearer-resp-rej-sent: 0
+        sm-modify-bearer-cmd-sent: 0
+        sm-modify-bearer-failure-ind-rcvd: 0
+        sm-delete-bearer-cmd-sent: 0
+        sm-delete-bearer-failure-ind-rcvd: 0
+        sm-bearer-resource-cmd-sent: 0
+        sm-bearer-resource-failure-ind-rcvd: 0
+        sm-suspend-notif-sent: 0
+        sm-resume-notif-sent: 0
+        sm-enable-pgw-pause-chrg-req-sent: 0
+        sm-enable-pgw-pause-chrg-acc-rcvd: 0
+        sm-enable-pgw-pause-chrg-rej-rcvd: 0
+        sm-start-pgw-pause-chrg-req-sent: 0
+        sm-start-pgw-pause-chrg-acc-rcvd: 0
+        sm-start-pgw-pause-chrg-rej-rcvd: 0
+        sm-stop-pgw-pause-chrg-req-sent: 0
+        sm-stop-pgw-pause-chrg-acc-rcvd: 0
+        sm-stop-pgw-pause-chrg-rej-rcvd: 0
+        sm-change-notification-req-sent: 0
+        sm-change-notification-resp-acc-rcvd: 0
+        sm-change-notification-resp-rej-rcvd: 0
+
+    sgw-bearer-mgmt-s4s11:
+        sm-dl-data-notif-throttled: 0
+        sm-dl-data-notif-delayed: 0
+        sm-dl-data-notif-delayed-sent: 0
+
+    sgw-gtp-path-mgmt-s4s11:
+        echo-req-sent: 0
+        echo-resp-acc-rcvd: 0
+        echo-resp-rej-rcvd: 0
+        echo-req-rcvd: 0
+        echo-resp-acc-sent: 0
+        echo-resp-rej-sent: 0
+
+    sgw-gtp-path-mgmt-s5s8:
+        echo-req-sent: 0
+        echo-resp-acc-rcvd: 0
+        echo-resp-rej-rcvd: 0
+        echo-req-rcvd: 0
+        echo-resp-acc-sent: 0
+        echo-resp-rej-sent: 0
+
+    sgw-gtp-path-mgmt-s5:
+        echo-req-sent: 0
+        echo-resp-acc-rcvd: 0
+        echo-resp-rej-rcvd: 0
+        echo-req-rcvd: 0
+        echo-resp-acc-sent: 0
+        echo-resp-rej-sent: 0
+
+    sgw-gtp-path-mgmt-s8:
+        echo-req-sent: 0
+        echo-resp-acc-rcvd: 0
+        echo-resp-rej-rcvd: 0
+        echo-req-rcvd: 0
+        echo-resp-acc-sent: 0
+        echo-resp-rej-sent: 0
+
+    sgw-gtp-overload-protection:
+        sgw-gtp-message-drops: 0
+        sgw-gtp-create-message-drops: 0
+        sgw-gtp-create-message-rejected: 0
+
+    sgw-gtp-error-stats:
+        sgw-gtp-error-no-resources: 0
+
+    handover:
+        attempted-pdn-ho-from-non-3gpp: 0
+        completed-pdn-ho-from-non-3gpp: 0
+
+    offline-charging:
+        rf-acct-req-created: 0
+        rf-acct-req-sent: 0
+        rf-acct-answer-acc-rec: 0
+        rf-acct-answer-rej-rec: 0
+        rf-acct-req-pending-to-be-written-to-disk: 0
+        rf-acct-req-written-to-disk: 0
+
+    high-availability:
+        icr-create-sync-sent: 0
+        icr-create-sync-received: 0
+        icr-delete-sync-sent: 0
+        icr-delete-sync-received: 0
+        uninitialized-users: 0
+        sr-delete-unstable-colocated-pgw: 0
+        sr-delete-unstable-external-pgw: 0
+        sr-non-redundant-users: 0
+        bulk-sync-progress: 0
+
+    sgw-load-control-information:
+        load-metric: 0
+
+    sgw-secondary-rat-data-usage:
+        uplink-bytes: 0
+        downlink-bytes: 0
+adm@pcc#
+
+
+adm@pcc#network-instances network-instance OM_CN routing bgp 7003 rib routes ipv4
+routes {
+    instance-id eric-pc-routing-engine-6c94b9455-z46nf:eric-pc-routing-engine
+    router-id 172.100.12.101
+    addr-family ipv4 unicast
+    tbl-version 78
+    route {
+        network 172.100.12.0/24
+        nexthop 0.0.0.0
+        peer 0.0.0.0
+        source-type redist
+        best-path yes
+        vpn-rd
+        additional-path no
+        metric 0
+        loc-prf 100
+        weight 32768
+        as-path
+    }
+    route {
+        network 5.100.0.17/32
+        nexthop 172.100.12.254
+        peer 172.100.12.254
+        source-type external
+        best-path yes
+        vpn-rd
+        additional-path no
+        metric 0
+        loc-prf 100
+        weight 100
+        as-path 8003 64512 64513
+    }
+    route {
+        network 5.100.0.20/32
+        nexthop 172.100.12.254
+        peer 172.100.12.254
+        source-type external
+        best-path yes
+        vpn-rd
+        additional-path no
+        metric 0
+        loc-prf 100
+        weight 100
+        as-path 8003 64512 64513
+    }
+    route {
+        network 5.100.0.21/32
+        nexthop 172.100.12.254
+        peer 172.100.12.254
+        source-type external
+        best-path yes
+        vpn-rd
+        additional-path no
+        metric 0
+        loc-prf 100
+        weight 100
+        as-path 8003 64512 64513
+    }
+    route {
+        network 5.100.0.22/32
+        nexthop 172.100.12.254
+        peer 172.100.12.254
+        source-type external
+        best-path yes
+        vpn-rd
+        additional-path no
+        metric 0
+        loc-prf 100
+        weight 100
+        as-path 8003 64512 64513
+    }
+    route {
+        network 5.100.0.24/32
+        nexthop 172.100.12.254
+        peer 172.100.12.254
+        source-type external
+        best-path yes
+        vpn-rd
+        additional-path no
+        metric 0
+        loc-prf 100
+        weight 100
+        as-path 8003 64512 64513
+    }
+}
+routes {
+    instance-id eric-pc-routing-engine-6c94b9455-zxv67:eric-pc-routing-engine
+    router-id 172.100.12.100
+    addr-family ipv4 unicast
+    tbl-version 78
+    route {
+        network 172.100.12.0/24
+        nexthop 0.0.0.0
+        peer 0.0.0.0
+        source-type redist
+        best-path yes
+        vpn-rd
+        additional-path no
+        metric 0
+        loc-prf 100
+        weight 32768
+        as-path
+    }
+    route {
+        network 5.100.0.17/32
+        nexthop 172.100.12.254
+        peer 172.100.12.254
+        source-type external
+        best-path yes
+        vpn-rd
+        additional-path no
+        metric 0
+        loc-prf 100
+        weight 100
+        as-path 8003 64512 64513
+    }
+    route {
+        network 5.100.0.20/32
+        nexthop 172.100.12.254
+        peer 172.100.12.254
+        source-type external
+        best-path yes
+        vpn-rd
+        additional-path no
+        metric 0
+        loc-prf 100
+        weight 100
+        as-path 8003 64512 64513
+    }
+    route {
+        network 5.100.0.21/32
+        nexthop 172.100.12.254
+        peer 172.100.12.254
+        source-type external
+        best-path yes
+        vpn-rd
+        additional-path no
+        metric 0
+        loc-prf 100
+        weight 100
+        as-path 8003 64512 64513
+    }
+    route {
+        network 5.100.0.22/32
+        nexthop 172.100.12.254
+        peer 172.100.12.254
+        source-type external
+        best-path yes
+        vpn-rd
+        additional-path no
+        metric 0
+        loc-prf 100
+        weight 100
+        as-path 8003 64512 64513
+    }
+    route {
+        network 5.100.0.24/32
+        nexthop 172.100.12.254
+        peer 172.100.12.254
+        source-type external
+        best-path yes
+        vpn-rd
+        additional-path no
+        metric 0
+        loc-prf 100
+        weight 100
+        as-path 8003 64512 64513
+    }
+}
+adm@pcc#
+
+
+
+adm@pcc#network-instances network-instance OM_CN routing bgp 7003 rib routes ipv6
+routes {
+    instance-id eric-pc-routing-engine-6c94b9455-z46nf:eric-pc-routing-engine
+    router-id 172.100.12.101
+    addr-family ipv6 unicast
+    tbl-version 0
+}
+routes {
+    instance-id eric-pc-routing-engine-6c94b9455-zxv67:eric-pc-routing-engine
+    router-id 172.100.12.100
+    addr-family ipv6 unicast
+    tbl-version 0
+}
+adm@pcc#
+
+--------------------------------------------------------------------------------------------------------------------------
+
